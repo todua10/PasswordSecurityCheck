@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<FlowPane fx:id="root"
+          alignment="CENTER"
+          orientation="VERTICAL"
+          prefHeight="160.0"
+          prefWidth="150.0"
+          vgap="15.0"
+          xmlns="http://javafx.com/javafx/11.0.14-internal"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="com.example.MainController">
+    <VBox spacing="5.0">
+        <Label text="Password:"/>
+        <PasswordField fx:id="passwordField" promptText="Input password">
+            <cursor>
+                <Cursor fx:constant="TEXT"/>
+            </cursor>
+        </PasswordField>
+    </VBox>
+    <VBox spacing="5.0">
+        <Label text="Repeat password:"/>
+        <PasswordField fx:id="password2Field" promptText="Repeat password">
+            <cursor>
+                <Cursor fx:constant="TEXT"/>
+            </cursor>
+        </PasswordField>
+    </VBox>
+    <Button fx:id="checkPassword" onAction="#check" text="Check password">
+        <cursor>
+            <Cursor fx:constant="HAND"/>
+        </cursor>
+    </Button>
+    <Label fx:id="labelOut"/>
+</FlowPane>
