@@ -22,7 +22,7 @@
                     <Cursor fx:constant="TEXT"/>
                 </cursor>
             </PasswordField>
-            <TextField fx:id="passwordFieldText" visible="false">
+            <TextField fx:id="passwordFieldText" visible="false" promptText="Input password">
                 <cursor>
                     <Cursor fx:constant="TEXT"/>
                 </cursor>
@@ -37,7 +37,7 @@
                     <Cursor fx:constant="TEXT"/>
                 </cursor>
             </PasswordField>
-            <TextField fx:id="password2FieldText" visible="false">
+            <TextField fx:id="password2FieldText" visible="false" promptText="Repeat password">
                 <cursor>
                     <Cursor fx:constant="TEXT"/>
                 </cursor>
