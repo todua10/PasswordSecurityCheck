@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+
 <FlowPane fx:id="root"
           alignment="CENTER"
           orientation="VERTICAL"
@@ -13,24 +16,51 @@
           fx:controller="com.example.MainController">
     <VBox spacing="5.0">
         <Label text="Password:"/>
-        <PasswordField fx:id="passwordField" promptText="Input password">
-            <cursor>
-                <Cursor fx:constant="TEXT"/>
-            </cursor>
-        </PasswordField>
+        <StackPane>
+            <PasswordField fx:id="passwordField" promptText="Input password">
+                <cursor>
+                    <Cursor fx:constant="TEXT"/>
+                </cursor>
+            </PasswordField>
+            <TextField fx:id="passwordFieldText" visible="false">
+                <cursor>
+                    <Cursor fx:constant="TEXT"/>
+                </cursor>
+            </TextField>
+        </StackPane>
     </VBox>
     <VBox spacing="5.0">
         <Label text="Repeat password:"/>
-        <PasswordField fx:id="password2Field" promptText="Repeat password">
-            <cursor>
-                <Cursor fx:constant="TEXT"/>
-            </cursor>
-        </PasswordField>
+        <StackPane>
+            <PasswordField fx:id="password2Field" promptText="Repeat password">
+                <cursor>
+                    <Cursor fx:constant="TEXT"/>
+                </cursor>
+            </PasswordField>
+            <TextField fx:id="password2FieldText" visible="false">
+                <cursor>
+                    <Cursor fx:constant="TEXT"/>
+                </cursor>
+            </TextField>
+        </StackPane>
     </VBox>
-    <Button fx:id="checkPassword" onAction="#check" text="Check password">
-        <cursor>
-            <Cursor fx:constant="HAND"/>
-        </cursor>
-    </Button>
+    <HBox spacing="10.0">
+        <Button fx:id="checkPassword" onAction="#check" text="Check password">
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <Button fx:id="showHidePassword" alignment="CENTER_RIGHT" contentDisplay="CENTER" onAction="#show"
+                prefHeight="25.6" prefWidth="25.6">
+            <graphic>
+                <ImageView>
+                    <Image url="@/show.png"/>
+                </ImageView>
+            </graphic>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+    </HBox>
     <Label fx:id="labelOut"/>
 </FlowPane>
