@@ -5,7 +5,6 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
 import javafx.scene.layout.FlowPane;
-
 import java.util.Objects;
 
 public class MainController {
@@ -45,7 +44,7 @@ public class MainController {
         }
         if (!pass.equals(pass2)){
             labelOut.setText("Password doesn't match!");
-        } else if (pass.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$")){
+        } else if (pass.matches("^((?=.*[à-ÿ¸À-ß¨])|(?=.*[a-zA-Z]))(?=.*[0-9])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$")){
             labelOut.setText("Strong password!");
             Clipboard clipboard = Clipboard.getSystemClipboard();
             ClipboardContent content = new ClipboardContent();
@@ -75,6 +74,12 @@ public class MainController {
             password2Field.setText(password2FieldText.getText());
             password2FieldText.setVisible(false);
             password2Field.setVisible(true);
+        }
+    }
+    @FXML
+    public void onEnter(KeyEvent e){
+        if(e.getCode() == KeyCode.ENTER) {
+            check();
         }
     }
 }

@@ -24,7 +24,7 @@ public class Main extends Application{
         primaryStage.setResizable(true);
         primaryStage.setMinHeight(320);
         primaryStage.setMinWidth(300);
-        primaryStage.setTitle("Password security check");
+        primaryStage.setTitle("Проверка надёжности пароля");
         primaryStage.sizeToScene();
         primaryStage.show();
     }
