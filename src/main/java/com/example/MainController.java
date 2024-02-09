@@ -43,15 +43,15 @@ public class MainController {
             pass2 = password2FieldText.getText();
         }
         if (!pass.equals(pass2)){
-            labelOut.setText("Password doesn't match!");
+            labelOut.setText("Пароли не совпадают!");
         } else if (pass.matches("^((?=.*[а-яёА-ЯЁ])|(?=.*[a-zA-Z]))(?=.*[0-9])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$")){
-            labelOut.setText("Strong password!");
+            labelOut.setText("Надёжный пароль!");
             Clipboard clipboard = Clipboard.getSystemClipboard();
             ClipboardContent content = new ClipboardContent();
             content.putString(pass);
             clipboard.setContent(content);
         } else {
-            labelOut.setText("Weak password!");
+            labelOut.setText("Слабый пароль!");
         }
     }
     @FXML
