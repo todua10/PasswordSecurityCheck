@@ -4,63 +4,114 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <FlowPane fx:id="root"
           alignment="CENTER"
           orientation="VERTICAL"
-          prefHeight="160.0"
-          prefWidth="150.0"
-          vgap="15.0"
+          prefHeight="250.0"
+          prefWidth="600.0"
+          vgap="20.0"
           xmlns="http://javafx.com/javafx/11.0.14-internal"
           xmlns:fx="http://javafx.com/fxml/1"
           fx:controller="com.example.MainController">
-    <VBox spacing="5.0">
-        <Label text="Пароль:"/>
-        <StackPane>
-            <PasswordField fx:id="passwordField" promptText="Введите пароль">
+    <FlowPane alignment="CENTER_LEFT"
+              orientation="VERTICAL"
+              prefHeight="130.0"
+              prefWidth="400.0"
+              vgap="15.0">
+        <VBox spacing="8.0">
+            <Label text="Пароль:">
+                <font>
+                    <Font name="Century Gothic" size="14.0"/>
+                </font>
+            </Label>
+            <StackPane prefWidth="400.0">
+                <PasswordField fx:id="passwordField"
+                               onKeyPressed="#onEnter"
+                               promptText="Введите пароль">
+                    <cursor>
+                        <Cursor fx:constant="TEXT"/>
+                    </cursor>
+                    <font>
+                        <Font name="Century Gothic" size="14.0"/>
+                    </font>
+                </PasswordField>
+                <TextField fx:id="passwordFieldText"
+                           onKeyPressed="#onEnter"
+                           promptText="Введите пароль"
+                           visible="false">
+                    <cursor>
+                        <Cursor fx:constant="TEXT"/>
+                    </cursor>
+                    <font>
+                        <Font name="Century Gothic" size="14.0"/>
+                    </font>
+                </TextField>
+                <Button fx:id="showHidePassword"
+                        contentDisplay="CENTER"
+                        onAction="#show"
+                        prefHeight="28"
+                        prefWidth="28"
+                        style="-fx-background-color: transparent; -fx-border-color: transparent;"
+                        StackPane.alignment="CENTER_RIGHT">
+                    <graphic>
+                        <ImageView>
+                            <Image url="@/show.png"/>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Button>
+            </StackPane>
+        </VBox>
+        <VBox spacing="8.0">
+            <Label text="Повторите пароль:">
+                <font>
+                    <Font name="Century Gothic" size="14.0"/>
+                </font>
+            </Label>
+            <StackPane prefWidth="400.0">
+                <PasswordField fx:id="password2Field"
+                               onKeyPressed="#onEnter"
+                               promptText="Повторите пароль">
+                    <cursor>
+                        <Cursor fx:constant="TEXT"/>
+                    </cursor>
+                    <font>
+                        <Font name="Century Gothic" size="14.0"/>
+                    </font>
+                </PasswordField>
+                <TextField fx:id="password2FieldText"
+                           onKeyPressed="#onEnter"
+                           promptText="Повторите пароль"
+                           visible="false">
+                    <cursor>
+                        <Cursor fx:constant="TEXT"/>
+                    </cursor>
+                    <font>
+                        <Font name="Century Gothic" size="14.0"/>
+                    </font>
+                </TextField>
+            </StackPane>
+        </VBox>
+    </FlowPane>
+    <FlowPane alignment="CENTER">
+        <HBox spacing="10.0">
+            <Button fx:id="checkPassword"
+                    onAction="#check"
+                    text="Проверить пароль">
                 <cursor>
-                    <Cursor fx:constant="TEXT"/>
+                    <Cursor fx:constant="HAND"/>
                 </cursor>
-            </PasswordField>
-            <TextField fx:id="passwordFieldText" visible="false" promptText="Введите пароль">
-                <cursor>
-                    <Cursor fx:constant="TEXT"/>
-                </cursor>
-            </TextField>
-        </StackPane>
-    </VBox>
-    <VBox spacing="5.0">
-        <Label text="Повторите пароль:"/>
-        <StackPane>
-            <PasswordField fx:id="password2Field" promptText="Повторите пароль" onKeyPressed="#onEnter">
-                <cursor>
-                    <Cursor fx:constant="TEXT"/>
-                </cursor>
-            </PasswordField>
-            <TextField fx:id="password2FieldText" visible="false" promptText="Повторите пароль" onKeyPressed="#onEnter">
-                <cursor>
-                    <Cursor fx:constant="TEXT"/>
-                </cursor>
-            </TextField>
-        </StackPane>
-    </VBox>
-    <HBox spacing="10.0">
-        <Button fx:id="checkPassword" onAction="#check" text="Проверить пароль">
-            <cursor>
-                <Cursor fx:constant="HAND"/>
-            </cursor>
-        </Button>
-        <Button fx:id="showHidePassword" alignment="CENTER_RIGHT" contentDisplay="CENTER" onAction="#show"
-                prefHeight="25.6" prefWidth="25.6">
-            <graphic>
-                <ImageView>
-                    <Image url="@/show.png"/>
-                </ImageView>
-            </graphic>
-            <cursor>
-                <Cursor fx:constant="HAND"/>
-            </cursor>
-        </Button>
-    </HBox>
-    <Label fx:id="labelOut"/>
+                <font>
+                    <Font name="Century Gothic" size="14.0"/>
+                </font>
+            </Button>
+        </HBox>
+    </FlowPane>
 </FlowPane>
